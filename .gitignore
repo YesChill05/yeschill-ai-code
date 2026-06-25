@@ -14,6 +14,7 @@ yeschill-ai-code-frontend/node_modules/
 yeschill-ai-code-frontend/.vite-temp/
 
 # Playwright 等临时工具
+capture.py
 screenshot.cjs
 screenshot.mjs
 screenshots.py
