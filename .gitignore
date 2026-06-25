@@ -1,0 +1,37 @@
+# YesChill AI Code
+
+# 生产配置（含真实密钥，使用 application-prod.example.yml 作为模板）
+**/application-prod.yml
+**/.env
+**/.env.local
+**/.env.development
+**/.env.production
+
+# 构建产物
+yeschill-ai-code/target/
+yeschill-ai-code-frontend/dist/
+yeschill-ai-code-frontend/node_modules/
+yeschill-ai-code-frontend/.vite-temp/
+
+# Playwright 等临时工具
+screenshot.cjs
+screenshot.mjs
+screenshots.py
+package.json
+package-lock.json
+node_modules/
+
+# IDE
+.idea/
+.trae/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Nginx（仅 Windows 本地开发用）
+nginx-1.30.2/

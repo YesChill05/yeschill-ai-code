@@ -1,0 +1,88 @@
+# 生产环境配置模板
+# 用法: 复制为 application-prod.yml 并填入真实值
+# cp application-prod.example.yml application-prod.yml
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://<your-server>:3306/yeschill_ai_code
+    username: <your-db-user>
+    password: <your-db-password>
+  data:
+    redis:
+      host: <your-redis-host>
+      port: 6379
+      database: 0
+      password: <your-redis-password>
+      ttl: 3600
+  session:
+    store-type: redis
+    timeout: 2592000
+
+server:
+  port: 1113
+  servlet:
+    context-path: /api
+    session:
+      cookie:
+        max-age: 2592000
+
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+  basic:
+    enable: true
+    username: <knife4j-username>
+    password: <knife4j-password>
+
+langchain4j:
+  open-ai:
+    chat-model:
+      base-url: https://api.deepseek.com
+      api-key: <your-deepseek-api-key>
+      model-name: deepseek-v4-flash
+      log-requests: false
+      log-responses: false
+      max-tokens: 8192
+      max-retries: 2
+      timeout: 180s
+    streaming-chat-model:
+      base-url: https://api.deepseek.com
+      api-key: <your-deepseek-api-key>
+      model-name: deepseek-v4-flash
+      log-requests: false
+      log-responses: false
+      max-tokens: 8192
+      temperature: 0.7
+      max-retries: 2
+      timeout: 180s
+    reasoning-streaming-chat-model:
+      base-url: https://api.deepseek.com
+      api-key: <your-deepseek-api-key>
+      model-name: deepseek-v4-pro
+      max-tokens: 8192
+      temperature: 0.1
+      log-requests: false
+      log-responses: false
+    routing-chat-model:
+      base-url: https://api.deepseek.com
+      api-key: <your-deepseek-api-key>
+      model-name: deepseek-v4-flash
+      log-requests: false
+      log-responses: false
+
+cos:
+  client:
+    host: https://<your-bucket>.cos.<your-region>.myqcloud.com
+    secretId: <your-cos-secret-id>
+    secretKey: <your-cos-secret-key>
+    region: ap-guangzhou
+    bucket: <your-bucket>
+
+mybatis-flex:
+  configuration:
+    log-impl: ''
+
+code:
+  deploy-host: http://<your-server>/dist
