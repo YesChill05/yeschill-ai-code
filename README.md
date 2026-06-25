@@ -128,7 +128,7 @@ yeschill-ai-code/
 │   │   └── prompt/                      # AI 系统提示词模板 (7个)
 │   └── src/test/                        # 测试
 │
-├── yeschill-ai-code-mother-frontend/    # 前端 (Vue 3 + Vite 7)
+├── yeschill-ai-code-frontend/    # 前端 (Vue 3 + Vite 7)
 │   ├── nginx.conf                       # 生产环境 Nginx 配置
 │   ├── openapi2ts.config.ts             # 后端 OpenAPI → 前端 API 代码生成
 │   ├── .env.local                       # 本地环境变量
@@ -226,7 +226,7 @@ cd yeschill-ai-code
 ### 4. 启动前端
 
 ```bash
-cd yeschill-ai-code-mother-frontend
+cd yeschill-ai-code-frontend
 
 npm install
 npm run dev
@@ -329,7 +329,7 @@ AI 路由 — 分析需求复杂度，选择 HTML / MULTI_FILE / VUE_PROJECT
 
 ### Nginx 配置
 
-项目提供 [nginx.conf](yeschill-ai-code-mother-frontend/nginx.conf)，主要配置：
+项目提供 [nginx.conf](yeschill-ai-code-frontend/nginx.conf)，主要配置：
 
 - 前端静态文件服务（`/usr/share/nginx/html`）
 - API 反向代理到后端 `http://127.0.0.1:1113`，支持 SSE 长连接
@@ -341,7 +341,7 @@ AI 路由 — 分析需求复杂度，选择 HTML / MULTI_FILE / VUE_PROJECT
 
 ```bash
 # 1. 构建前端
-cd yeschill-ai-code-mother-frontend
+cd yeschill-ai-code-frontend
 npm run build  # 产出 dist/ 目录
 
 # 2. 将 dist/ 上传到服务器 Nginx 静态目录
